@@ -1,33 +1,27 @@
-Oxford Battery Degradation Dataset 1
-                ↓
-        Dataset Understanding
-                ↓
-       Data Quality Assessment
-                ↓
-         Data Preprocessing
-                ↓
-       Exploratory Data Analysis
-                ↓
-        Feature Preparation
-                ↓
-       SoH / RUL Construction
-                ↓
-    Chronological Data Splitting
-        Train / Validation / Test
-                ↓
-      Sequence / Window Creation
-                ↓
-          Baseline Model
-                ↓
-        ┌───────┼────────┐
-        ↓       ↓        ↓
-       LSTM     GRU      TCN
-        └───────┼────────┘
-                ↓
-      Model Comparison & Tuning
-                ↓
-      Robustness & Error Analysis
-                ↓
-        Final Model Selection
-                ↓
-          SoH / RUL Prediction
+# Oxford Battery Degradation Dataset 1 — Pipeline Flowchart
+
+## Overall Project Pipeline
+
+```mermaid
+flowchart TD
+    A[Oxford Battery Degradation Dataset 1] --> B[Dataset Understanding]
+    B --> C[Data Quality Assessment]
+    C --> D[Data Preprocessing]
+    D --> E[Exploratory Data Analysis]
+    E --> F[Feature Preparation]
+    F --> G[SoH / RUL Target Construction]
+    G --> H[Chronological Train / Validation / Test Split]
+    H --> I[Sequence / Window Creation]
+    I --> J[Baseline Model]
+
+    J --> K[LSTM]
+    J --> L[GRU]
+    J --> M[TCN]
+
+    K --> N[Model Comparison & Tuning]
+    L --> N
+    M --> N
+
+    N --> O[Robustness & Error Analysis]
+    O --> P[Final Model Selection]
+    P --> Q[SoH / RUL Prediction]

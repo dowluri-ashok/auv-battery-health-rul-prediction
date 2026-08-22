@@ -1,42 +1,28 @@
-# Oxford Battery Degradation Dataset 1 — Pipeline Flowchart
+# Oxford Battery RUL Prediction — Pipeline Flowchart
 
-## 1. Overall Project Pipeline
+## Overall Pipeline
 
 ```text
-Oxford Battery Degradation Dataset 1
+Oxford Battery Degradation Dataset
                 ↓
-        Raw MATLAB Dataset
+        Data Loading
                 ↓
-        Data Loading & Parsing
+       Data Validation
                 ↓
-        Dataset Structure Inspection
+       Data Cleaning
                 ↓
-        Data Quality Checks
+     Feature Extraction
                 ↓
-     Missing Data / Cycle Checks
+      Feature Engineering
                 ↓
-          Preprocessing
+       Sequence Creation
                 ↓
-      Feature & Target Preparation
+     Train / Validation / Test Split
                 ↓
-     Chronological Data Splitting
-                ↓
-      Sequence / Window Creation
-                ↓
-          Baseline Model
-                ↓
-       Deep Learning Models
-        ┌───────┼────────┐
-        ↓       ↓        ↓
-       LSTM     GRU      TCN
-        └───────┼────────┘
+        Model Training
                 ↓
        Model Evaluation
                 ↓
- MAE | RMSE | MAPE | R²
+       RUL Prediction
                 ↓
- Training Time | Inference Time
-                ↓
-          Model Comparison
-                ↓
-       Final RUL Prediction
+     Results & Visualization
